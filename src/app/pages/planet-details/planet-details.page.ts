@@ -9,11 +9,11 @@ import { HttpClient } from '@angular/common/http';
 export class PlanetDetailsPage implements OnInit {
   planet: any;
   constructor(private activatedRoute: ActivatedRoute, private http: HttpClient) { }
-
+  
   ngOnInit() {
-    let id = this.activatedRoute.snapshot.paramMap.get('id');
+   let id = this.activatedRoute.snapshot.paramMap.get('id');
     this.http.get(`https://swapi.dev/api/planets/${id}`).subscribe(res => {
-      this.planet = res;
+     this.planet = res;
     });
   }
 

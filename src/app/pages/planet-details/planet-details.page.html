@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-buttons slot="start" defaultHref="/tabs/(planet:planet)"></ion-buttons>
+    <ion-buttons slot="start" defaultHref="/tabs/(planets)"></ion-buttons>
     <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ planet?.title }}</ion-title>
+    <ion-title>{{ planet?.name }}</ion-title>
     <ion-button (click)="unfavoritePlanet()" *ngIf="isFavorite">
       <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
     </ion-button>
@@ -15,5 +15,14 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-
+  <ion-card *ngIf="planet" class="planet-card">
+    <ion-card-content>
+      Name:{{person.name}}
+    </ion-card-content>
+    <ion-card-content>
+      Population:{{person.population}}
+    </ion-card-content>
+    <ion-card-content>
+      Climate:{{person.climate}}
+    </ion-card-content>
 </ion-content>

@@ -1,23 +1,36 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-buttons slot="start" defaultHref="/tabs/(people:people)"></ion-buttons>
+    <ion-buttons slot="start" defaultHref="/tabs/(people)"></ion-buttons>
     <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ person?.title }}</ion-title>
+    <ion-title>{{ person?.name }}</ion-title>
     <ion-button (click)="unfavoritePerson()" *ngIf="isFavorite">
       <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
     </ion-button>
     <ion-button (click)="favoritePerson()" *ngIf="!isFavorite">
       <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
     </ion-button>
-  </ion-buttons>
+  
 </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-card *ngIf="person" class="movie-card">
-    <ion-card-header>Episode {{ film.episode_id }}: {{ film.title }}</ion-card-header>
+  <ion-card *ngIf="person" class="person-card">
     <ion-card-content>
-      {{ film.opening_crawl }}
+      Name:{{person.name}}
     </ion-card-content>
+    <ion-card-content>
+      Height:{{person.height}}
+    </ion-card-content>
+    <ion-card-content>
+      Mass:{{person.mass}}
+    </ion-card-content>
+    <ion-card-content>
+      Birth year:{{person.birth_year}}
+    </ion-card-content>
+    <ion-card-content>
+      Eye color:{{person.eye_color}}
+    </ion-card-content>
+    
+  </ion-card>
 </ion-content>
