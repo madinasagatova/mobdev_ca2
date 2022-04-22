@@ -15,5 +15,9 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-
+  <ion-card *ngIf="person" class="movie-card">
+    <ion-card-header>Episode {{ film.episode_id }}: {{ film.title }}</ion-card-header>
+    <ion-card-content>
+      {{ film.opening_crawl }}
+    </ion-card-content>
 </ion-content>
