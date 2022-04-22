@@ -1,9 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>personDetails</ion-title>
-  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" defaultHref="/tabs/(people:people)"></ion-buttons>
+    <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ person?.title }}</ion-title>
+    <ion-button (click)="unfavoritePerson()" *ngIf="isFavorite">
+      <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+    </ion-button>
+    <ion-button (click)="favoritePerson()" *ngIf="!isFavorite">
+      <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 
 </ion-content>
